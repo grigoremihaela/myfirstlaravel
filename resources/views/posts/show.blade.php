@@ -5,7 +5,7 @@
     @include('errors.list')
 
     @if (Auth::user()->id == $post->user_id)
-    <div style="float:right";>
+    <div class="span6 pull-right">
         <a href="{{ $post->id }}/edit">Update this post.</a>
     </div>
     @endif

@@ -6,11 +6,12 @@ use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Auth;
+use Session;
 
 
 class PostsController extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -51,8 +52,11 @@ class PostsController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $post = new Post($request->all());
-        Auth::user()->posts()->save($post);
+        Auth::user()->posts()->create($request->all());
+    //    flash('Your post has been created!')->important();
+
+    //    $post = new Post($request->all());
+    //    Auth::user()->posts()->save($post);
 
     //    $post = new Post($request->all());
     //    $post->user_id = Auth::user()->id;
@@ -60,20 +64,23 @@ class PostsController extends Controller
 
     //    Post::create($request->all());
     //    $post->user_id = Auth::user()->id;
-        return redirect('posts'); 
-    //  return $post;
+        
+    //    return $post;return redirect('posts'); 
+        return redirect('posts')->with([
+           'flash_message' => 'Your post has been created!',
+           'flash_message_important' => true,
+        ]); 
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return Response
      */
-    public function show($id)
+    public function show(Post $post)
     { 
-        $post = Post::findOrFail($id);
      // dd($post->updated_at->diffForHumans());return $post;
         return view('posts.show', compact('post'));
     }
@@ -81,12 +88,11 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return Response
      */
-    public function edit($id)
+    public function edit(Post  $post)
     {
-       $post = Post::findOrFail($id);
        return view('posts.edit', compact('post')); 
     }
 
@@ -94,7 +100,7 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  Request  $request
-     * @param  int  $id
+     * @param  Post  $post
      * @return Response
      */
     public function update($id, PostRequest $request)

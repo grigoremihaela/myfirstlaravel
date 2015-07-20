@@ -30,10 +30,10 @@ Route::controllers([
 //    return DB::table('users')->where('id', $id)->first();
 //	  return User::where('id', $id)->firstOrFail();  });
 
-//Route::resource('users', 'UsersController');
-Route::get('users', 'UsersController@index'); 
-Route::get('users/{id}', 'UsersController@show');
-Route::get('users/{id}/edit', ['as' => 'edit', 'uses' =>'UsersController@edit']);
+Route::resource('users', 'UsersController');
+//Route::get('users', 'UsersController@index'); 
+//Route::get('users/{id}', 'UsersController@show');
+//Route::get('users/{id}/edit', ['as' => 'edit', 'uses' =>'UsersController@edit']);
 
 //Route::get('users/{id}', function( $id)
 //{ return View::make('users.show'); });

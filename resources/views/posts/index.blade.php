@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <div style="float:right";>
+    <div class="span6 pull-right">
     <a href="{{ url('/posts/create') }}">Create a new post here.</a>
     </div>
     <h1>All Posts</h1>
