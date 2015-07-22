@@ -28,10 +28,19 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::latest('updated_at')->get();
-    //    $posts = Post::latest('updated_at')->where('user_id', '=', Auth::user()->id)->get();
-    //    $posts = Post::latest('created_at')->where('created_at', '>=', '2015-07-18 06:59:06')->get();
+        
         return view('posts.index', compact('posts')); 
-    //    return dd($posts->toArray());
+    }
+
+     /**
+     * Display a listing of the auth resource.
+     *
+     * @return Response
+     */
+      public function postsAuth()
+    {
+        $posts = Post::latest('updated_at')->where('user_id', '=', Auth::user()->id)->get();
+        return view('posts.postsAuth', compact('posts'));
     }
 
     /**
@@ -47,28 +56,25 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  PostRequest  $request
      * @return Response
      */
     public function store(PostRequest $request)
     {
         Auth::user()->posts()->create($request->all());
-    //    flash('Your post has been created!')->important();
-
-    //    $post = new Post($request->all());
-    //    Auth::user()->posts()->save($post);
 
     //    $post = new Post($request->all());
     //    $post->user_id = Auth::user()->id;
-    //    $post->save(compact('post'));      
+    //    $post->save(compact('post')); 
+
+    //    $post = new Post($request->all());
+    //    Auth::user()->posts()->save($post);     
 
     //    Post::create($request->all());
-    //    $post->user_id = Auth::user()->id;
-        
-    //    return $post;return redirect('posts'); 
-        return redirect('posts')->with([
-           'flash_message' => 'Your post has been created!',
-           'flash_message_important' => true,
+    //    $post->user_id = Auth::user()->id; 
+
+        return redirect('posts/postsAuth')->with(['flash_message' => 'Your post has been created!',
+                                                  'flash_message_important' => true,
         ]); 
 
     }
@@ -81,7 +87,6 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     { 
-     // dd($post->updated_at->diffForHumans());return $post;
         return view('posts.show', compact('post'));
     }
 
@@ -103,11 +108,10 @@ class PostsController extends Controller
      * @param  Post  $post
      * @return Response
      */
-    public function update($id, PostRequest $request)
+    public function update(Post  $post, PostRequest $request)
     {
-       $post = Post::findOrFail($id);
        $post->update($request->all());
-       return redirect('posts'); 
+       return redirect('posts/postsAuth');
     }
 
     /**
