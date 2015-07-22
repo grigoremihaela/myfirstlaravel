@@ -31,19 +31,22 @@ Route::controllers([
 */
 
 Route::resource('users', 'UsersController');
-//Route::get('users', 'UsersController@index'); 
-//Route::get('users/{id}', 'UsersController@show');
-//Route::get('users/{id}/edit', ['as' => 'edit', 'uses' =>'UsersController@edit']);
+//Route::get('users', 'UsersController@index');          //show all users
+//Route::get('users/{id}', 'UsersController@show');      //show a user
+//Route::get('users/{id}/edit', 'UsersController@edit'); //show auth user profile
 
 /*
 |--------------------------------------------------------------------------
 | Posts
 |--------------------------------------------------------------------------
 */
-
+/*
+Route::get('posts', 'PostsController@index');               //show all posts
+Route::get('posts/create', 'PostsController@create');       //form for to create a new post
+Route::post('posts/{post}', 'PostsController@show');        //show only a post
+Route::put('posts', 'PostsController@store');               // save the new created post with a user_id associated
+Route::post('posts/{post}/edit', 'PostsController@update'); //to update a post
+*/
+Route::get('posts/postsAuth', 'PostsController@postsAuth'); // show posts created of auth user
 Route::resource('posts', 'PostsController');
-//Route::get('posts', 'PostsController@index');
-//Route::get('posts/create', 'PostsController@create'); 
-//Route::get('posts/{id}', 'PostsController@show');
-//Route::post('posts', 'PostsController@store');
-//Route::post('posts/{id}/edit', 'PostsController@update');
+
