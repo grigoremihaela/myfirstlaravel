@@ -5,12 +5,12 @@
 
 <div class="form-group">
     {!! Form::label('summary', 'summary:') !!}
-    {!! Form::textarea('summary', null, ['class' => 'form-control']) !!}
+    {!! Form::text('summary', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('content', 'Content:') !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+    {!! Form::text('content', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">  

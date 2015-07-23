@@ -1,8 +1,14 @@
-@if (Session::has('flash_message'))
-    <div class="alert alert-success {{ Session::has('flash_message_important') ? 'alert-important' : ' ' }}">
-        @if (Session::has('flash_message_important'))  
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        @endif
-        {{ session('flash_message') }}
-    </div>
+@if (Session::has('flash_notification.message'))
+    @if (Session::has('flash_notification.overlay'))
+        @include('flash::modal', ['modalClass' => 'flash-modal', 
+                                  'title' => Session::get('flash_notification.title'), 
+                                  'body' => Session::('flash_notification.body') ])
+    @else
+        <div class="alert alert-{{ Session::get('flash_notification.level') }}"> 
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                    &times;
+            </button>
+            {{ Session::get('flash_notification.message') }}
+        </div>
+    @endif
 @endif

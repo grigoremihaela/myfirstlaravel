@@ -73,10 +73,8 @@ class PostsController extends Controller
     //    Post::create($request->all());
     //    $post->user_id = Auth::user()->id; 
 
-        return redirect('posts/postsAuth')->with(['flash_message' => 'Your post has been created!',
-                                                  'flash_message_important' => true,
-        ]); 
-
+        flash()->overlay('Your post has been successfully created!', 'Good job');
+        return redirect('posts/postsAuth'); 
     }
 
     /**
