@@ -45,8 +45,13 @@ Route::get('posts', 'PostsController@index');               //show all posts
 Route::get('posts/create', 'PostsController@create');       //form for to create a new post
 Route::post('posts/{post}', 'PostsController@show');        //show only a post
 Route::put('posts', 'PostsController@store');               // save the new created post with a user_id associated
-Route::post('posts/{post}/edit', 'PostsController@update'); //to update a post
+Route::patch('posts/{post}/edit', 'PostsController@update'); //to update a post
 */
 Route::get('posts/postsAuth', 'PostsController@postsAuth'); // show posts created of auth user
 Route::resource('posts', 'PostsController');
 
+Route::get("faq", function()
+{
+	return View::make("pages.faq");
+});
+	

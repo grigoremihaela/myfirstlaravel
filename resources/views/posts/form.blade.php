@@ -4,6 +4,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('slug', 'Slug:') !!}
+    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('summary', 'summary:') !!}
     {!! Form::text('summary', null, ['class' => 'form-control']) !!}
 </div>

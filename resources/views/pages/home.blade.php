@@ -2,13 +2,12 @@
 
 @section('homePage')
 
+<div class="container">
 <div class="row">
 	<div class="box">
-        <div class="col-lg-12">
-            <h2 class="intro-text text-center"><strong>Home Page</strong></h2> 
-            
+        <div class="col-lg-12">           
 					<div class="container">
-						<h2 class="section-title">A few features of our project</h2>
+						<h2 class="section-title">Home Page</h2>
 						<small class="section-subtitle">Voluptatem accusantum doloremque</small>
 
 						<div class="row">
@@ -51,5 +50,7 @@
 			</div>
 		</div>
 	</div>
+</div>
+
 @stop
 

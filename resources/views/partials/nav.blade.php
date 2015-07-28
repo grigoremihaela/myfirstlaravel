@@ -15,6 +15,7 @@
             <li><a href="/posts">All Posts</a></li>
             <li><a href="/posts/postsAuth">Your Posts</a></li>
             <li><a href="/users">Users</a></li>
+            <li><a href="/faq">FAQ</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

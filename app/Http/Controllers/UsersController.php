@@ -14,8 +14,7 @@ class UsersController extends Controller
 
     public function index()
     {
-    	$name = 'All users:';
-        $users = User::get();
+        $users = User::oldest('name')->get();
         return view('users.index', compact('users','name'));
     }
 

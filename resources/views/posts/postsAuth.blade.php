@@ -2,18 +2,26 @@
 
 @section('authPosts')
 
-  <div class="row">  
-      <div class="span6 pull-right">
-         <a href="{{ url('/posts/create') }}">Create a new post here.</a>
-      </div>   
-      <h1>Your Posts</h1>
-      <hr/> 
-  </div> 
 
+     <div class="row">
+           <div class="col-md-10 text-center">
+          <h1 class="section-title">Your Posts </h1>
+          </div>
+
+          <div class="col-md-2 text-center">
+             <h2>
+              <a href="{{ url('/posts/create') }}">{!! Form::button('Create a new post here!', array('class' => 'btn btn-success ')) !!}</a>
+             </h2>
+          </div>
+      </div>
+
+   <hr> 
+ 
+ <div class="row">  
   @foreach ($posts as $post)
   <div class="box">
 
-      <div class="col-lg-12 text-center">
+      <div class="col-lg-12 ">
         <h2>
            <a href="{{ url('/posts', $post->id) }}">{{ $post->title }}</a>
            <br>
@@ -25,17 +33,13 @@
           <p>{!! $post->summary !!}</p> 
       </div>
 
-      <div class="col-lg-12 text-center">
+      <div class="col-lg-12 ">
           {!! link_to('/posts/' . $post->id) !!} 
           <hr>
       </div>
 
   </div>
   @endforeach
-
-  <div class="col-lg-12 text-center">
-      Auth user:  {!! Auth::user() !!}
-  </div>
 
 @stop
        

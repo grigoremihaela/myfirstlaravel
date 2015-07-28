@@ -5,10 +5,10 @@
 <div class="fullwidth-block-gray" data-bg-color="#e6e6e6">
 	<div class="container">
 		<h2 class="section-title">Customer testimonials</h2>
-		<smal class="section-subtitle">{{ $name }}</smal>
+		<smal class="section-subtitle">All users</smal>
         <div class="row">
             @foreach ($users as $user)
-                @if (Auth::user()->id == $user->id)     							
+                @if (Auth::check() &&  Auth::user()->id == $user->id)     							
 					<div class="testimonial">
 						<img src="/img/person-4.jpg" alt="" class="user-avatar">
 						<div class="testimonial-auth">
@@ -21,7 +21,7 @@
 					</div>
                 @else
 					<div class="testimonial">
-						<img src="/img/person-2.jpg" alt="" class="user-avatar">
+						<img src="/img/person-1.jpg" alt="" class="user-avatar">
 						<div class="testimonial-content">
 							<span class="meta">
 									<strong> <a href="users/{{ $user->id }}">{{ $user->name }}</a></strong>,

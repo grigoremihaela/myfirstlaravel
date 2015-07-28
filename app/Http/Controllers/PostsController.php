@@ -16,8 +16,8 @@ class PostsController extends Controller
      *
      * @return void
      */
-    //  public function __construct() {
-    //  $this->middleware('auth', ['except' => ['index', 'show']]); }
+      public function __construct() {
+      $this->middleware('auth', ['except' => ['index', 'show']]); }
 
 
     /**
@@ -115,11 +115,12 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Post  $post
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Post  $post)
     {
-        //
+        $post->delete();
+        return redirect('posts/postsAuth');
     }
 }

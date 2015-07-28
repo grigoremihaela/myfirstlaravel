@@ -44,6 +44,7 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  text-decoration: none !important;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -3840,6 +3841,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     max-height: 200px;
   }
 }
+.navbar .navbar-default .navbar-fixed-top {background: transparent;}
 .container > .navbar-header,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
@@ -6264,7 +6266,7 @@ label,
  */
 .hero {
   text-align: center;
-  background-image: url("/img/images.jpg");}
+  background-color: #4682B4;}
   .hero .container {
     padding-top: 5px;
     padding-bottom: 5px; }
@@ -6356,4 +6358,58 @@ label,
     .testimonial .testimonial-content p:last-child {
       margin-bottom: 0; }
 
+.pricing {
+  border: 1px solid #9598a2;
+  border-radius: 5px;
+  margin-bottom: 50px; }
+  .pricing .pricing-header {
+    background: #50576a;
+    text-align: center;
+    padding: 20px; }
+    .pricing .pricing-header .pricing-title {
+      color: white;
+      font-size: 18px;
+      font-size: 1.125em;
+      margin: 0 0 10; }
+    .pricing .pricing-header .price sup {
+      font-size: 40px;
+      font-size: 2.5rem; }
+    .pricing .pricing-header .price .num {
+      font-size: 50px;
+      font-size: 3.125em;
+      color: white; }
+    .pricing .pricing-header .price small {
+      font-size: 14px;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6); }
+  .pricing.featured {
+    border-color: #4a7cd5; }
+    .pricing.featured .pricing-header {
+      background: #4a7cd5; }
+  .pricing .pricing-checklist {
+    padding: 30px; }
+    .pricing .pricing-checklist ul {
+      list-style: none; }
+      .pricing .pricing-checklist ul li {
+        padding: 10px 10px 10px 20px;
+        position: relative; }
+        .pricing .pricing-checklist ul li:before {
+          content: "\f00d";
+          font-family: FontAwesome;
+          font-size: 10px;
+          font-size: 0.625em;
+          position: absolute;
+          left: 0;
+          top: 15px; }
+        .pricing .pricing-checklist ul li.check:before {
+          content: "\f00c";
+          color: #4a7cd5; }
 
+dl dt {
+  font-size: 18px;
+  font-size: 1.125em;
+  color: #50576a;
+  font-weight: 400;
+  margin-bottom: 10px; }
+dl dd {
+  margin: 0 0 30px; }

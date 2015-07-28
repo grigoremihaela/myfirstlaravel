@@ -16,7 +16,7 @@
     <!--font-awesome
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />  
     -->
-     {!! HTML::style('http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css') !!}
+    {!! HTML::style('fonts/font-awesome.min.css') !!}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,28 +26,31 @@
 </head>
 <body>
 @include ('partials.nav')
-    <header role="banner" class="hero" >
+<header role="banner" class="hero" >
                 <div class="container">
-                    <a href="#" class="branding"><img src="/img/laravel-l-slant.png" alt="My First Laravel"></a>
+                    <a href="#" class="branding"><img src="/img/logo.png" alt="My First Laravel"></a>
                     <div id="hero-color">
                         <h2>Easy way to launch your startup: <strong>Simple and powerful</strong></h2>
                     </div>
                     @yield('login')
+                    @yield('register')
                     <span id="hero-color" class="scrolldown">Scroll down to explore <br><i class="fa fa-chevron-down"></i></span>
                 </div>
-    </header> <!-- hero -->
+</header> <!-- hero -->
 
 <div class="container">
     @include ('flash::message')
     @yield('homePage')
     @yield('allPosts')
-    @yield('authPosts')       
+    @yield('authPosts')
+    @yield('postShow')       
     @yield('content')
 </div>
     @yield('users')
+    @yield('faq')
     @yield('footer')
-
-    <footer class="footer" role="contentinfo">
+        
+<footer class="footer" role="contentinfo">
                 <div class="container text-center">
 
                     <div class="social-links">
@@ -57,19 +60,24 @@
                         <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
                     </div>
 
-                    <p class="text-center"><small>Copyright &copy; My First laravel</small></p>
+                     <p class="text-center"><small>Copyright &copy; My First laravel</small></p>
                     
                 </div>
-    </footer>
+</footer>
 
-    <!-- Scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-    <script>
+    <!-- Scripts  -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   
+<script>
         $('#flash-overlay-modal').modal();
     //     $('div.alert').not('.alert-important').delay(3000).slideUp(300);
-    </script>
+</script>
     
 </body>
 </html>
+
+
+
+
+               
