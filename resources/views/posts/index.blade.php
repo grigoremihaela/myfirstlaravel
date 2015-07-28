@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('allPosts')
+@section('content')
 
      <div class="row">
            <div class="col-md-10 text-center">

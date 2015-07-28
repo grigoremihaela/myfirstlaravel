@@ -1,9 +1,8 @@
 @extends('app')
 
-@section('authPosts')
+@section('content')
 
-
-     <div class="row">
+  <div class="row">
            <div class="col-md-10 text-center">
           <h1 class="section-title">Your Posts </h1>
           </div>
@@ -13,11 +12,11 @@
               <a href="{{ url('/posts/create') }}">{!! Form::button('Create a new post here!', array('class' => 'btn btn-success ')) !!}</a>
              </h2>
           </div>
-      </div>
+  </div>
 
-   <hr> 
+  <hr> 
  
- <div class="row">  
+  <div class="row">  
   @foreach ($posts as $post)
   <div class="box">
 

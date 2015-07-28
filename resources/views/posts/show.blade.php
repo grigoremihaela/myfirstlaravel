@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('postShow')
+@section('content')
 
     <div class="row"> 
 

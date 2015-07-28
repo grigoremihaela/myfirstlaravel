@@ -1,8 +1,7 @@
 @extends('app')
 
-@section('homePage')
+@section('content')
 
-<div class="container">
 <div class="row">
 	<div class="box">
         <div class="col-lg-12">           
@@ -50,7 +49,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 
 @stop
 
