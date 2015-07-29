@@ -18,13 +18,18 @@ class CreatePostsTable extends Migration {
 			$table->string('title', 255);
 			$table->string('slug', 255)->unique;
 			$table->text('summary');
-			$table->text('content');
+			$table->text('content');			
+    /*
+			$table->boolean('seen')->default(false);
+			$table->boolean('active')->default(false);
+	*/
 			$table->integer('user_id')->unsigned();
 
 			$table->foreign('user_id')
 			      ->references('id')
 			      ->on('users')
-			      ->onDelete('cascade');
+			      ->onDelete('cascade')
+			      ->onUpdate('cascade');
 		});
 
 		
@@ -36,9 +41,7 @@ class CreatePostsTable extends Migration {
 	 * @return void
 	 */
 	public function down()
-	{
-			
-
+	{		
 		Schema::drop('posts');
 	}
 

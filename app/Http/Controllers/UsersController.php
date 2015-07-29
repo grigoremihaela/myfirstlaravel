@@ -29,5 +29,12 @@ class UsersController extends Controller
         $user = User::whereId($id)->first();
         return view('users.edit', compact('user'));
     }
+
+    public function destroy($id)
+    {
+        $user = User::whereId($id)->first();
+        $user->delete($id);
+        return redirect('users');
+    }
     
 }

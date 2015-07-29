@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Tag;
 use Auth;
 use Session;
 
@@ -50,7 +51,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $tags = Tag::lists('name', 'id');
+        return view('posts.create', compact('tags'));
     }
 
     /**
@@ -61,7 +63,8 @@ class PostsController extends Controller
      */
     public function store(PostRequest $request)
     {
-        Auth::user()->posts()->create($request->all());
+        $post = Auth::user()->posts()->create($request->all());
+        $post->tags()->attach($request->input('tags'));
 
     //    $post = new Post($request->all());
     //    $post->user_id = Auth::user()->id;
@@ -96,7 +99,8 @@ class PostsController extends Controller
      */
     public function edit(Post  $post)
     {
-       return view('posts.edit', compact('post')); 
+        $tags = Tag::lists('name', 'id');
+        return view('posts.edit', compact('post', 'tags')); 
     }
 
     /**
@@ -108,8 +112,9 @@ class PostsController extends Controller
      */
     public function update(Post  $post, PostRequest $request)
     {
-       $post->update($request->all());
-       return redirect('posts/postsAuth');
+        $post->update($request->all());
+        $post->tags()->sync($request->input('tags'));
+        return redirect('posts/postsAuth');
     }
 
     /**
@@ -123,4 +128,5 @@ class PostsController extends Controller
         $post->delete();
         return redirect('posts/postsAuth');
     }
+
 }

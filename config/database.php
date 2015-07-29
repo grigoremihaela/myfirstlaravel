@@ -56,7 +56,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'testlaravel'),
+            'database'  => env('DB_DATABASE', 'laravel'),
             'username'  => env('DB_USERNAME', 'root'),
             'password'  => env('DB_PASSWORD', 'miha'),
             'charset'   => 'utf8',

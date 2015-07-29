@@ -15,7 +15,7 @@ class Post extends Model  {
 	 */
 	protected $table = 'posts';
 
-	protected $fillable = ['title', 'slug', 'summary', 'content', 'user_id'];
+	protected $fillable = ['id', 'title', 'slug', 'summary', 'content', 'user_id'];
 
 	
 
@@ -27,6 +27,26 @@ class Post extends Model  {
 	public function user() 
 	{
 		return $this->belongsTo('App\User');
+	}
+
+	/**
+	 * Get the tags associated with the given post.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function tags() 
+	{
+		return $this->belongsToMany('App\Tag')->withTimestamps();
+	}
+
+    /**
+	 * Get a list of tag ids associated with the current post.
+	 *
+	 * @return array
+	 */
+	public function getTagListAttribute()
+	{
+		return $this->tags->lists($id);
 	}
 	
 }	
