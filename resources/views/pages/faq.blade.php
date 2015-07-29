@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('faq')
+
     <div style="background-color: #e6e6e6;">
         <div class="container">
             <h2 class="section-title">Frequently asked questions</h2>

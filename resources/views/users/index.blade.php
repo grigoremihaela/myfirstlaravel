@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('users')
+
 <div class="fullwidth-block-gray" data-bg-color="#e6e6e6">
 	<div class="container">
 		<h2 class="section-title">Customer testimonials</h2>

@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
     <div class="container">
         <h2 class="section-title">Profile of user</h2>      
         <div class="row">

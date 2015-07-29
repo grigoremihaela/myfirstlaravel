@@ -1,4 +1,5 @@
 @section('footer')
+
 <footer class="footer" role="contentinfo">
     <div class="container text-center">
         <div class="social-links">

@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
 	<h2 class="section-title">Home Page</h2>
 	<small class="section-subtitle">Voluptatem accusantum doloremque</small>
 	<div class="row">

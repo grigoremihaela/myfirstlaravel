@@ -1,4 +1,5 @@
 @section('header')
+
 <header role="banner" class="hero" >
     <div class="container">
         <a href="#" class="branding"><img src="/img/logo.png" alt="My First Laravel"></a>

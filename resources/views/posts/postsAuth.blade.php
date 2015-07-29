@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
     <div class="row">
         <div class="col-md-10 text-center">
             <h1 class="section-title">Your Posts </h1>
