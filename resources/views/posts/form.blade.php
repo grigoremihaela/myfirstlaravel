@@ -19,8 +19,8 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('tags', 'Tags:') !!}
-    {!! Form::select('tags[]', $tags, $post->tags->lists('id')->all(), ['id' => 'tags', 'class' => 'form-control', 'multiple']) !!}
+    {!! Form::label('tag_list', 'Tags:') !!}
+    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control', 'multiple']) !!}
 </div>
 
 <div class="form-group">  

@@ -64,7 +64,7 @@ class PostsController extends Controller
     public function store(PostRequest $request)
     {
         $post = Auth::user()->posts()->create($request->all());
-        $post->tags()->attach($request->input('tags'));
+        $post->tags()->attach($request->input('tag_list'));
 
     //    $post = new Post($request->all());
     //    $post->user_id = Auth::user()->id;
@@ -113,7 +113,7 @@ class PostsController extends Controller
     public function update(Post  $post, PostRequest $request)
     {
         $post->update($request->all());
-        $post->tags()->sync($request->input('tags'));
+        $post->tags()->sync($request->input('tag_list'));
         return redirect('posts/postsAuth');
     }
 
