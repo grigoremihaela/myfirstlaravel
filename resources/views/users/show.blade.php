@@ -17,7 +17,9 @@
                             <li class="check" >Name: {{ $user->name}} </li>
                             <li class="check">Email: {{ $user->email}} </li>
                             @if (Auth::check() && Auth::user()->id == $user->id)                                              
-                                <li class="check"><a href="{{ $user->id }}/edit">Edit your profile</a></li>
+                                <li class="check">
+                                    {!! link_to('/users/'.$user->id.'/edit', 'Edit your profile') !!}
+                                </li>
                             @endif                                 
                         </ul>
                     </div>                                    

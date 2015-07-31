@@ -8,21 +8,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Myfirstlaravel</a>
+        {!! link_to('/', 'Myfirstlaravel', 'class="navbar-brand"') !!}
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="/posts">All Posts</a></li>
-            <li><a href="/posts/postsAuth">Your Posts</a></li>
-            <li><a href="/users">Users</a></li>
-            <li><a href="/faq">FAQ</a></li>
+            <li>{!! link_to('/posts', 'All Posts') !!}</li>
+            <li>{!! link_to('/posts/postsAuth', 'Your Posts') !!}</li>
+            <li>{!! link_to('/posts/'.$latest->id, 'Latest post:'.$latest->title) !!}</li>
+            <li>{!! link_to('/users', 'Users') !!}</li>
+            <li>{!! link_to('/faq', 'FAQ') !!}</li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/auth/register">Register</a></li>
+                <li>{!! link_to('/auth/login', 'Login') !!}</li>
+                <li>{!! link_to('/auth/register', 'Register') !!}</li>
             @else
                 <li><img class="img-responsive img-left" src="/img/english-flag.png" alt=""></li>
                 <li class="dropdown">

@@ -13,8 +13,10 @@
 						<img src="/img/person-4.jpg" alt="" class="user-avatar">
 						<div class="testimonial-auth">
 							<span class="meta">
-								<strong><a href="users/{{ $user->id }}">{{ $user->name }} (auth)</a></strong>,
-								<em>Project manager <a href="#">{{ $user->email }}</a></em>
+								<strong>
+								  {!! link_to('/users/'.$user->id, $user->name.'(auth)') !!}      		
+		                        </strong>, 
+		                        <em>Project manager {!! link_to('/users/'.$user->id, $user->email) !!}</em>
 							</span>
 							<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 						</div>
@@ -24,8 +26,8 @@
 						<img src="/img/person-1.jpg" alt="" class="user-avatar">
 						<div class="testimonial-content">
 							<span class="meta">
-								<strong> <a href="users/{{ $user->id }}">{{ $user->name }}</a></strong>,
-								<em>Designer<a href="#">{{ $user->email }}</a></em>
+								<strong> {!! link_to('/users/'.$user->id, $user->name) !!} </strong>,
+								<em>Designer {!! link_to('/users/'.$user->id, $user->email) !!}</em>
 							</span>
 							<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 						</div>

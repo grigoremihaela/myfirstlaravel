@@ -18,9 +18,9 @@
             <div class="box">
                 <div class="col-lg-12 ">
                     <h2>
-                    <a href="{{ url('/posts', $post->id) }}">{{ $post->title }}</a>
-                    <br>
-                    <small>{{ $post->user->name }} {!! $post->created_at  !!}</small>
+                        {!! link_to('/posts/'.$post->id, $post->title) !!}
+                        <br>
+                        <small>{{ $post->user->name }} {!! $post->created_at  !!}</small>
                     </h2>          
                 </div>
                 <div class="col-lg-12">
