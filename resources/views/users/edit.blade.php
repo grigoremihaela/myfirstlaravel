@@ -9,7 +9,7 @@
                 <div class="pricing ">
                     <div class="pricing-header">                                       
                         <div class="price">
-                            <span class="num">{{ $user->name}}:</span>
+                            <span class="num">{{ $user->name}}:{!! $user->image !!}</span>
                         </div>
                     </div>
                     <div class="pricing-checklist">

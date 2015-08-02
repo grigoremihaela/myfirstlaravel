@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'GreatAdmin',
             'email' => 'admin@la.fr',
             'password' => bcrypt('admin'),
+            'image' => '<img src="/img/person1.jpg" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >'
          
         ]);
 
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'GreatRedactor',
             'email' => 'redac@la.fr',
             'password' => bcrypt('redac'),
+            'image' => '<img src="/img/person2.jpg" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >'
         
         ]);
 
@@ -35,6 +37,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Walker',
             'email' => 'walker@la.fr',
             'password' => bcrypt('walker'),
+            'image' => '<img src="/img/person3.jpg" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >'
           
         ]);
 
@@ -42,6 +45,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Slacker',
             'email' => 'slacker@la.fr',
             'password' => bcrypt('slacker'),
+            'image' => '<img src="/img/person4.jpg" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >'
         
         ]);
 

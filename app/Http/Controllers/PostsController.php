@@ -17,8 +17,10 @@ class PostsController extends Controller
      *
      * @return void
      */
-      public function __construct() {
-      $this->middleware('auth', ['except' => ['index', 'show']]); }
+      public function __construct() 
+    {
+      $this->middleware('auth', ['except' => ['index', 'show']]); 
+    }
 
 
     /**
@@ -110,8 +112,15 @@ class PostsController extends Controller
      * @param  Post  $post
      * @return Response
      */
-    public function update(Post  $post, PostRequest $request)
+    public function update(Post  $post, Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|min:3|max:255',
+            'slug' => 'required|unique:posts,slug,'.$post->id,
+            'summary' => 'required|min:3|max:65000',
+            'content' => 'required|min:3|max:65000',
+            'tags' => 'tags'
+        ]);
         $post->update($request->all());
         $post->tags()->sync($request->input('tag_list'));
         return redirect('posts/postsAuth');

@@ -2,7 +2,6 @@
 
 @section('content')
 
-    @include('errors.list')
     <h1>Write a new post</h1>
     <hr/>
     <div class="content">

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\Post;
 
 class PostRequest extends Request
 {
@@ -21,13 +22,16 @@ class PostRequest extends Request
      *
      * @return array
      */
-    public function rules()
+    public function rules(Post $post)
     {
         return [
             'title' => 'required|min:3|max:255',
+            'slug' => 'required|unique:posts,slug,'.$post->id,
             'summary' => 'required|min:3|max:65000',
-            'content' => 'required|min:3|max:65000'
+            'content' => 'required|min:3|max:65000',
+            'tags' => 'tags'
         //    'created_at' => ['required', 'date']
         ];
     }
 }
+

@@ -25,7 +25,7 @@
     <hr/>
     <div class="content">
         @unless ($post->tags->isEmpty())
-            <h5>Tags:</h5>
+            <h3>Tags:</h3>
             <ul>
                 @foreach ($post->tags as $tag)
                     <li>{!! $tag->name !!}</li>
@@ -33,10 +33,12 @@
             </ul>
             <hr/>
         @endunless
-        <h5>Summary:</h5>
+        <h3>Slug:</h3>
+        {!! $post->slug !!}
+        <h3>Summary:</h3>
         {!! $post->summary !!}
         <hr/>
-        <h5>Content:</h5>
+        <h3>Content:</h3>
         {!! $post->content !!}
         <hr/>
     </div>

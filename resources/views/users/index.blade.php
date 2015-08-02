@@ -10,7 +10,7 @@
             @foreach ($users as $user)
                 @if (Auth::check() &&  Auth::user()->id == $user->id)     							
 					<div class="testimonial">
-						<img src="/img/person-4.jpg" alt="" class="user-avatar">
+						{!! $user->image !!}
 						<div class="testimonial-auth">
 							<span class="meta">
 								<strong>
@@ -23,7 +23,7 @@
 					</div>
                 @else
 					<div class="testimonial">
-						<img src="/img/person-1.jpg" alt="" class="user-avatar">
+						{!! $user->image !!}
 						<div class="testimonial-content">
 							<span class="meta">
 								<strong> {!! link_to('/users/'.$user->id, $user->name) !!} </strong>,
@@ -33,13 +33,13 @@
 						</div>
 					</div>				
                 @endif
-
-{!! Form::model($user, ['method' => 'DELETE', 'action' => ['UsersController@destroy', $user->id]]) !!}
+@if (Auth::check() &&  Auth::user()->id == '1') 
+    {!! Form::model($user, ['method' => 'DELETE', 'action' => ['UsersController@destroy', $user->id]]) !!}
     <div class="form-group">
         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
     </div>
-{!! Form::close() !!}
-        
+    {!! Form::close() !!}
+@endif        
             @endforeach			
 		</div> <!-- .row -->
 	</div> <!-- .container -->
