@@ -9,11 +9,11 @@
         </div>
         @if (Auth::check() && Auth::user()->id == $post->user_id)
             <div class="col-md-4 text-center">
-                <h1><a href="{{ $post->id }}/edit">{!! Form::button('Update', array('class' => 'btn btn-warning')) !!}</a></h1>
+                <h1><a href="{{ $post->slug }}/edit">{!! Form::button('Update', array('class' => 'btn btn-warning')) !!}</a></h1>
             </div>
             <div class="col-md-4 text-right"> 
                 <h1>   
-                {!! Form::model($post, ['method' => 'DELETE', 'action' => ['PostsController@destroy', $post->id]]) !!}
+                {!! Form::model($post, ['method' => 'DELETE', 'action' => ['PostsController@destroy', $post->slug]]) !!}
                     <div class="form-group">
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     </div>

@@ -9,7 +9,14 @@
                 <div class="pricing ">
                     <div class="pricing-header">                                      
                         <div class="price">
-                            <span class="num">{{ $user->name}}:{!! $user->image !!}</span>
+                           <span class="num">{{ $user->name}}:
+                                @if($user->image) 
+                                    {!! $user->image !!}
+                                @endif
+                                @if($user->avatar) 
+                                    <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
+                                @endif
+                            </span>
                         </div>
                     </div>
                     <div class="pricing-checklist">

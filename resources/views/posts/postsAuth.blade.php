@@ -18,7 +18,7 @@
             <div class="box">
                 <div class="col-lg-12 ">
                     <h2>
-                        {!! link_to('/posts/'.$post->id, $post->title) !!}
+                        {!! link_to('/posts/'.$post->slug, $post->title) !!}
                         <br>
                         <small>{{ $post->user->name }} {!! $post->created_at  !!}</small>
                     </h2>          
@@ -27,7 +27,7 @@
                     <p>{!! $post->summary !!}</p> 
                 </div>
                 <div class="col-lg-12 ">
-                    {!! link_to('/posts/' . $post->id) !!} 
+                    {!! link_to('/posts/' . $post->slug) !!} 
                     <hr>
                 </div>
             </div>

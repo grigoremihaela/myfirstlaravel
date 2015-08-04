@@ -17,6 +17,11 @@
                             <li class="check" >Name: {{ $user->name}} </li>
                             <li class="check">Email: {{ $user->email}} </li>                                       
                             <li class="check">Id: {{ $user->id}} </li>
+                            <li class="check">Github Id: {{ $user->github_id}} </li>
+                            <li class="check">Github Name: {{ $user->github_name}} </li>
+                            <li class="check">Avatar Image Github: 
+                                <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
+                            </li>
                             <li class="check">Created_at: {{ $user->created_at}} </li>
                             <li class="check">Updated_at: {{ $user->updated_at}} </li>                                                
                         </ul>

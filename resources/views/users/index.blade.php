@@ -10,6 +10,7 @@
             @foreach ($users as $user)
                 @if (Auth::check() &&  Auth::user()->id == $user->id)     							
 					<div class="testimonial">
+					    <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
 						{!! $user->image !!}
 						<div class="testimonial-auth">
 							<span class="meta">

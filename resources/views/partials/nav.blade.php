@@ -15,13 +15,14 @@
         <ul class="nav navbar-nav">
             <li>{!! link_to('/posts', 'All Posts') !!}</li>
             <li>{!! link_to('/posts/postsAuth', 'Your Posts') !!}</li>
-            <li>{!! link_to('/posts/'.$latest->id, 'Latest post:'.$latest->title) !!}</li>
+            <li>{!! link_to('/posts/'.$latest->slug, 'Latest post:'.$latest->title) !!}</li>
             <li>{!! link_to('/users', 'Users') !!}</li>
             <li>{!! link_to('/faq', 'FAQ') !!}</li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
+                <li>{!! link_to('auth/github', 'Login Github') !!}</li>
                 <li>{!! link_to('/auth/login', 'Login') !!}</li>
                 <li>{!! link_to('/auth/register', 'Register') !!}</li>
             @else

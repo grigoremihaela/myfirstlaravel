@@ -8,6 +8,7 @@
     @include('partials.header')
     <div class="container">
         @include ('flash::message')
+        @yield('github')
         @yield('content')
     </div>
     @yield('users')

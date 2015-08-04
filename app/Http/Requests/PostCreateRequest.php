@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use App\Post;
 
-class PostRequest extends Request
+class PostCreateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +21,11 @@ class PostRequest extends Request
      *
      * @return array
      */
-    public function rules(Post $post)
+    public function rules()
     {
-        $post = $this->posts;
         return [
             'title' => 'required|min:3|max:255',
-            'slug' => 'required|unique:posts,slug,'.$post->id,
+            'slug' => 'required|unique:posts,slug',
             'summary' => 'required|min:3|max:65000',
             'content' => 'required|min:3|max:65000',
             'tags' => 'tags'

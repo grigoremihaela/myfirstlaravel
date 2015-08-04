@@ -9,8 +9,14 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
-*/
 
+Route::get('/', function()
+	{
+		if(Auth::check()) return 'Welcome back,' .Auth::user()->name . link_to('/auth/logout', 'Logout');
+		return 'Hi guest.' . link_to('login', 'Login with Github');
+	});
+Route::get('login', 'Auth\AuthController@redirectToProvider');
+*/
 Route::get('/', 'PagesController@home');
 
 /*
@@ -19,10 +25,14 @@ Route::get('/', 'PagesController@home');
 |--------------------------------------------------------------------------
 */
 
+Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +50,10 @@ Route::resource('users', 'UsersController');
 | Posts
 |--------------------------------------------------------------------------
 */
+Route::bind('posts', function ($slug) 
+{ 
+    return \App\Post::where('slug', $slug)->first();
+});   
 /*
 Route::get('posts', 'PostsController@index');               //show all posts
 Route::get('posts/create', 'PostsController@create');       //form for to create a new post

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use App\Post;
@@ -63,7 +64,7 @@ class PostsController extends Controller
      * @param  PostRequest  $request
      * @return Response
      */
-    public function store(PostRequest $request)
+    public function store(PostCreateRequest $request)
     {
         $post = Auth::user()->posts()->create($request->all());
         $post->tags()->attach($request->input('tag_list'));
@@ -112,15 +113,8 @@ class PostsController extends Controller
      * @param  Post  $post
      * @return Response
      */
-    public function update(Post  $post, Request $request)
+    public function update(Post  $post, PostRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required|min:3|max:255',
-            'slug' => 'required|unique:posts,slug,'.$post->id,
-            'summary' => 'required|min:3|max:65000',
-            'content' => 'required|min:3|max:65000',
-            'tags' => 'tags'
-        ]);
         $post->update($request->all());
         $post->tags()->sync($request->input('tag_list'));
         return redirect('posts/postsAuth');
