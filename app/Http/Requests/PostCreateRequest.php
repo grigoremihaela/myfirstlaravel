@@ -25,7 +25,7 @@ class PostCreateRequest extends Request
     {
         return [
             'title' => 'required|min:3|max:255',
-            'slug' => 'required|unique:posts,slug',
+    //        'slug' => 'required|unique:posts,slug',
             'summary' => 'required|min:3|max:65000',
             'content' => 'required|min:3|max:65000',
             'tags' => 'tags'

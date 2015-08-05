@@ -20,7 +20,7 @@
                     <h2>
                         {!! link_to('/posts/'.$post->slug, $post->title) !!}
                         <br>
-                        <small>{{ $post->user->name }} {!! $post->created_at  !!}</small>
+                        <small>{{ $post->user->name }} {!! $post->updated_at  !!}</small>
                     </h2>          
                 </div>
                 <div class="col-lg-12">

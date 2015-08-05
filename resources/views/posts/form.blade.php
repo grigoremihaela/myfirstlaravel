@@ -4,12 +4,6 @@
      @if ($errors->has('title')) <p class="help-block">{{ $errors->first('title') }}</p> @endif
 </div>
 
-<div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
-    {!! Form::label('slug', 'Slug:') !!}
-    {!! Form::text('slug', null, ['class' => 'form-control']) !!}
-     @if ($errors->has('slug')) <p class="help-block">{{ $errors->first('slug') }}</p> @endif
-</div>
-
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : '' }}">
     {!! Form::label('summary', 'summary:') !!}
     {!! Form::text('summary', null, ['class' => 'form-control']) !!}

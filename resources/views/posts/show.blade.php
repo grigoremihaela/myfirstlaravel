@@ -5,7 +5,7 @@
     <div class="row"> 
         <div class="col-md-4">
             <h1>{{ $post->title }}</h1>
-            <small>{{ $post->user->name }} {!! $post->created_at  !!}</small>
+            <small>{{ $post->user->name }} {!! $post->updated_at  !!}</small>
         </div>
         @if (Auth::check() && Auth::user()->id == $post->user_id)
             <div class="col-md-4 text-center">

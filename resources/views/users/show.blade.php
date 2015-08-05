@@ -10,10 +10,10 @@
                     <div class="pricing-header">                                      
                         <div class="price">
                            <span class="num">{{ $user->name}}:
-                                @if($user->image) 
-                                    {!! $user->image !!}
+                                @if(!is_null($user->image))
+                                    <img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
                                 @endif
-                                @if($user->avatar) 
+                                @if(!is_null($user->avatar))
                                     <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
                                 @endif
                             </span>

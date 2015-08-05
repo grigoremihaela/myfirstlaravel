@@ -15,7 +15,8 @@
         <ul class="nav navbar-nav">
             <li>{!! link_to('/posts', 'All Posts') !!}</li>
             <li>{!! link_to('/posts/postsAuth', 'Your Posts') !!}</li>
-            <li>{!! link_to('/posts/'.$latest->slug, 'Latest post:'.$latest->title) !!}</li>
+<!--            <li>{!! link_to('/posts/'.$latest->slug, 'Latest post:'.$latest->title) !!}</li>
+-->
             <li>{!! link_to('/users', 'Users') !!}</li>
             <li>{!! link_to('/faq', 'FAQ') !!}</li>
         </ul>
@@ -26,6 +27,7 @@
                 <li>{!! link_to('/auth/login', 'Login') !!}</li>
                 <li>{!! link_to('/auth/register', 'Register') !!}</li>
             @else
+                <li><a href="/users/{{ Auth::user()->id }}/edit" >Your profile</a></li>
                 <li><img class="img-responsive img-left" src="/img/english-flag.png" alt=""></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

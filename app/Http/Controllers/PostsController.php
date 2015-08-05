@@ -32,7 +32,6 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::latest('updated_at')->get();
-        
         return view('posts.index', compact('posts')); 
     }
 
@@ -67,6 +66,8 @@ class PostsController extends Controller
     public function store(PostCreateRequest $request)
     {
         $post = Auth::user()->posts()->create($request->all());
+        $post->slug = str_slug($post->title, "-");
+        $post->save();
         $post->tags()->attach($request->input('tag_list'));
 
     //    $post = new Post($request->all());
@@ -116,7 +117,9 @@ class PostsController extends Controller
     public function update(Post  $post, PostRequest $request)
     {
         $post->update($request->all());
-        $post->tags()->sync($request->input('tag_list'));
+        $post->slug = str_slug($post->title, "-");
+        $post->save();
+        $post->tags()->sync($request->input('tag_list', []));
         return redirect('posts/postsAuth');
     }
 

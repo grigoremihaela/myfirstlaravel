@@ -11,7 +11,7 @@
                 @if (Auth::check() &&  Auth::user()->id == $user->id)     							
 					<div class="testimonial">
 					    <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
-						{!! $user->image !!}
+						<img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
 						<div class="testimonial-auth">
 							<span class="meta">
 								<strong>
@@ -24,7 +24,7 @@
 					</div>
                 @else
 					<div class="testimonial">
-						{!! $user->image !!}
+					    <img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
 						<div class="testimonial-content">
 							<span class="meta">
 								<strong> {!! link_to('/users/'.$user->id, $user->name) !!} </strong>,

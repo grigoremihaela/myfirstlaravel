@@ -27,7 +27,7 @@ class PostRequest extends Request
         $post = $this->posts;
         return [
             'title' => 'required|min:3|max:255',
-            'slug' => 'required|unique:posts,slug,'.$post->id,
+    //        'slug' => 'required|unique:posts,slug,'.$post->id,
             'summary' => 'required|min:3|max:65000',
             'content' => 'required|min:3|max:65000',
             'tags' => 'tags'
