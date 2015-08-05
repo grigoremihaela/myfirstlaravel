@@ -26,10 +26,10 @@ $factory->define(App\Post::class, function ($faker) {
     'title' => $faker->sentence(mt_rand(1, 5)),
     'slug' => $faker->unique()->slug,
     'summary' => join("\n\n", $faker->paragraphs(mt_rand(1, 3))),
-    'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
-    'user_id' => $faker->numberBetween($min = 1, $max = 60),
+    'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),  
     'created_at' => $faker->dateTimeBetween('-1 month', '-10 days'),
     'updated_at' => $faker->dateTimeBetween('-9 days', '-1 days'),
+    'user_id' => $faker->numberBetween($min = 1, $max = 10),
   ];
 });
 
@@ -40,9 +40,9 @@ $factory->define(App\Tag::class, function ($faker) {
     ];
 });
 
-$factory->define(App\Tag::class, function ($faker) {
+$factory->define(App\PostTag::class, function ($faker) {
     return [
-        'post_id' => $faker->numberBetween($min = 79, $max = 147),
+        'post_id' => $faker->numberBetween($min = 1, $max = 20),
         'tag_id' => $faker->numberBetween($min = 1, $max = 4),
     ];
 });

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Post;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
    
             $this->call('UserTableSeeder');
-            $this->call('PostTableSeeder');
             $this->call('TagTableSeeder');
+            $this->call('PostTableSeeder');
             $this->call('PostTagTableSeeder');
-
+            
         Model::reguard();
     }
 }

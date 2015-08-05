@@ -10,7 +10,9 @@
                     <div class="pricing-header">                                       
                         <div class="price">
                             <span class="num">{{ $user->name}}:
-                                  <img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
+                                @if(($user->image))
+                                    <img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
+                                @endif
                             </span>
                         </div>
                     </div>
@@ -22,7 +24,9 @@
                             <li class="check">Github Id: {{ $user->github_id}} </li>
                             <li class="check">Github Name: {{ $user->github_name}} </li>
                             <li class="check">Avatar Image Github: 
-                                <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
+                                @if(($user->avatar))
+                                <img src="{{ $user->avatar }}" alt="" class="user-avatar" style="height:128px; width:128px" >
+                                 @endif
                             </li>
                             <li class="check">Created_at: {{ $user->created_at}} </li>
                             <li class="check">Updated_at: {{ $user->updated_at}} </li>                                                

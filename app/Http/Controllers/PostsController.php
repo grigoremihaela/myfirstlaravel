@@ -23,6 +23,13 @@ class PostsController extends Controller
       $this->middleware('auth', ['except' => ['index', 'show']]); 
     }
 
+    public function getSlug(Post $post)
+    {  
+        foreach ($posts as $post) {
+            $post->slug = str_slug($post->title, "-");
+            $post->save();
+        }
+    }
 
     /**
      * Display a listing of the resource.
@@ -117,8 +124,6 @@ class PostsController extends Controller
     public function update(Post  $post, PostRequest $request)
     {
         $post->update($request->all());
-        $post->slug = str_slug($post->title, "-");
-        $post->save();
         $post->tags()->sync($request->input('tag_list', []));
         return redirect('posts/postsAuth');
     }
