@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\User;
+use Input;
+
 
 class UsersController extends Controller
 {
 
     public function index()
     {
-        $users = User::oldest('name')->get();
+        $limit = Input::get('limit') ?: 3;
+        $users = User::oldest('name')->paginate($limit);
         return view('users.index', compact('users','name'));
     }
 

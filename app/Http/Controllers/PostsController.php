@@ -9,6 +9,7 @@ use App\Post;
 use App\Tag;
 use Auth;
 use Session;
+use Input;
 
 
 class PostsController extends Controller
@@ -38,8 +39,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest('updated_at')->get();
-        return view('posts.index', compact('posts')); 
+        $limit = Input::get('limit') ?: 3;
+        $posts = Post::latest('updated_at')->paginate($limit);
+//        dd(get_class_methods($posts));
+       return view('posts.index', compact('posts'));  
     }
 
      /**
@@ -49,7 +52,8 @@ class PostsController extends Controller
      */
       public function postsAuth()
     {
-        $posts = Post::latest('updated_at')->where('user_id', '=', Auth::user()->id)->get();
+        $limit = Input::get('limit') ?: 2;
+        $posts = Post::latest('updated_at')->where('user_id', '=', Auth::user()->id)->paginate($limit);
         return view('posts.postsAuth', compact('posts'));
     }
 
@@ -63,6 +67,25 @@ class PostsController extends Controller
         $tags = Tag::lists('name', 'id');
         return view('posts.create', compact('tags'));
     }
+
+    /**
+     * @param $posts
+     *
+     * @return mixed
+     */
+    public function respondWithPagination($posts)
+    {
+      return [
+               array_merge($posts->all()),
+              'paginator' => [
+                 'total_count' => $posts->total(),
+                 'total_pages' => ceil($posts->total() / $posts->perPage()),
+                 'current_page' => $posts->currentPage(),
+                 'limit' => $posts->perPage()
+                 ]
+            ];  
+    }
+
 
     /**
      * Store a newly created resource in storage.

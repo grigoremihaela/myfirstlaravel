@@ -27,7 +27,14 @@ Route::get('/', 'PagesController@home');
 
 Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
-
+Route::get("auth/facebook", function()
+{
+	return View::make("auth.facebook");
+});
+Route::get("auth/twitter", function()
+{
+	return View::make("auth.twitter");
+});
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

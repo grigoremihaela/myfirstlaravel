@@ -20,7 +20,7 @@
                     <h2>
                     {!! link_to('/posts/'.$post->slug, $post->title) !!}                
                     <br>
-                    <small>{{ $post->user->name }} {!! $post->updated_at  !!}</small>
+                    <small>{!! $post->id !!}. {{ $post->user->name }} {!! $post->updated_at  !!} </small>
                     </h2>          
                 </div>
                 <div class="col-lg-12">
@@ -32,6 +32,7 @@
                 </div>
             </div>
         @endforeach
+        {!! $posts->render() !!} 
     </div> <!-- .row -->
 @stop
        

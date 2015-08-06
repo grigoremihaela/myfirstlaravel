@@ -41,7 +41,8 @@
     </div>
     {!! Form::close() !!}
 @endif        
-            @endforeach			
+            @endforeach	
+           {!! $users->render() !!} 		
 		</div> <!-- .row -->
 	</div> <!-- .container -->
 </div> <!-- .fullwidth-block -->

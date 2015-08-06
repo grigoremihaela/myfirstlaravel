@@ -23,7 +23,24 @@
 
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
-                <li>{!! link_to('auth/github', 'Login Github') !!}</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Social Login<span class="caret"></span>
+                    </a>
+                    
+                    <ul class="dropdown-menu" role="menu">                        
+        <li><a href="/auth/facebook" class="facebook"><i class="fa fa-facebook"></i>Login Facebook</a></li>
+        <li><a href="/auth/twitter" class="twitter"><i class="fa fa-twitter"></i>Login Twitter</a></li>
+        <li><a href="/auth/facebook" class="google-plus"><i class="fa fa-google-plus"></i>Login Google Plus</a></li>
+        <li><a href="/auth/github" class="github"><i class="fa fa-github"></i>Login Github</a></li>       
+<!--        
+                        <li>{!! link_to('auth/github', 'Login Github') !!}</li>
+                        <li>{!! link_to('auth/facebook', 'Login Facebook') !!}</li>
+                        <li>{!! link_to('auth/twitter', 'Login Twitter') !!}</li>
+-->
+                    </ul>
+                </li>
+
                 <li>{!! link_to('/auth/login', 'Login') !!}</li>
                 <li>{!! link_to('/auth/register', 'Register') !!}</li>
             @else
