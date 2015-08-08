@@ -15,8 +15,7 @@
         <ul class="nav navbar-nav">
             <li>{!! link_to('/posts', 'All Posts') !!}</li>
             <li>{!! link_to('/posts/postsAuth', 'Your Posts') !!}</li>
-<!--            <li>{!! link_to('/posts/'.$latest->slug, 'Latest post:'.$latest->title) !!}</li>
--->
+            <li>{!! link_to('/posts/'.$latest->slug, 'Latest post:'.$latest->title) !!}</li>
             <li>{!! link_to('/users', 'Users') !!}</li>
             <li>{!! link_to('/faq', 'FAQ') !!}</li>
         </ul>

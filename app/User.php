@@ -42,4 +42,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
       return $this->hasMany('App\Post');
     }
+
+     public function github() 
+    {
+      return $this->hasMany('App\Github');
+    }
 }

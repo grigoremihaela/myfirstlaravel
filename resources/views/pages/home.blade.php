@@ -8,36 +8,44 @@
 		<div class="col-md-3 col-sm-6">
 			<div class="feature">
 				<div class="feature-icon">
+				  <a href="{{ url('/posts/') }}">
 					<img src="/img/icon-pie-chart.png" alt="" class="icon">
+				  </a>
 				</div>
-				<h3 class="feature-title">Easy Analitycs</h3>
+				<h3 class="feature-title">{!! link_to('/posts', 'See All Posts') !!}</h3>
 				<p>Neque porro quisquam est qui dolorem ipsum quia dolor amet consectetur adipisci velit sed.</p>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-6">
 			<div class="feature">
 				<div class="feature-icon">
-					<img src="/img/icon-mobile.png" alt="" class="icon">
-				</div>
-				<h3 class="feature-title">Smartphone compatible</h3>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-			</div>
-		</div>
-		<div class="col-md-3 col-sm-6">
-			<div class="feature">
-				<div class="feature-icon">
-					<img src="/img/icon-piggy-bank.png" alt="" class="icon">
-				</div>
-				<h3 class="feature-title">Time-saving</h3>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-			</div>
-		</div>
-		<div class="col-md-3 col-sm-6">
-			<div class="feature">
-				<div class="feature-icon">
+				  <a href="{{ url('/posts/postsAuth') }}">
 					<img src="/img/icon-lock.png" alt="" class="icon">
+				  </a>
 				</div>
-				<h3 class="feature-title">Solid Protection</h3>
+				<h3 class="feature-title">{!! link_to('/posts/postsAuth', 'Only Your Posts') !!}</h3>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<div class="feature">
+				<div class="feature-icon">
+				  <a href="{{ url('/users') }}">
+					<img src="/img/icon-piggy-bank.png" alt="" class="icon">
+				  </a>
+				</div>
+				<h3 class="feature-title">{!! link_to('/users', 'All Users') !!}</h3>
+				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<div class="feature">
+				<div class="feature-icon">
+				  <a href="{{ url('/faq') }}">
+					<img src="/img/icon-mobile.png" alt="" class="icon">
+				  </a>
+				</div>
+				<h3 class="feature-title">{!! link_to('/faq', 'FAQ') !!}</h3>
 				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
 			</div>
 		</div>

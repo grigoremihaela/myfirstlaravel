@@ -118,17 +118,20 @@ class AuthController extends Controller
             $authUser->github_name = $githubUser->name;
             $authUser->github_id = $githubUser->id;
             $authUser->avatar = $githubUser->avatar;
+    //        $authUser->github_nickname = $githubUser->nickname;   //username
             $authUser->save();
             return $authUser;
         }
 
 
         return User::create([
-//            'username' => $githubUser->username,
-            'name' => $githubUser->name,
             'email' => $githubUser->email,
             'github_id' => $githubUser->id,
+    //        'gihub_nickname' => $githubUser->nickname,    //username
+            'github_name' => $githubUser->name,
             'avatar' => $githubUser->avatar
+    
         ]);
     }
 }
+

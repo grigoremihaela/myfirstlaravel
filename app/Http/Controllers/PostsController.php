@@ -69,25 +69,6 @@ class PostsController extends Controller
     }
 
     /**
-     * @param $posts
-     *
-     * @return mixed
-     */
-    public function respondWithPagination($posts)
-    {
-      return [
-               array_merge($posts->all()),
-              'paginator' => [
-                 'total_count' => $posts->total(),
-                 'total_pages' => ceil($posts->total() / $posts->perPage()),
-                 'current_page' => $posts->currentPage(),
-                 'limit' => $posts->perPage()
-                 ]
-            ];  
-    }
-
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  PostRequest  $request
@@ -148,6 +129,8 @@ class PostsController extends Controller
     {
         $post->update($request->all());
         $post->tags()->sync($request->input('tag_list', []));
+        $post->slug = str_slug($post->title, "-");
+        $post->save();
         return redirect('posts/postsAuth');
     }
 
