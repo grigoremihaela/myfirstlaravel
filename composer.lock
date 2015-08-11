@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "82549ecd9f0e5361abf69ca97cf50c6e",
+    "hash": "a35288007ac2eefa04c636b5e1f917d0",
     "packages": [
+        {
+            "name": "allantatter/laravel-react",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/allantatter/laravel-react.git",
+                "reference": "1cb01323c0c9a5cf07138228333e295daf08bb11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/allantatter/laravel-react/zipball/1cb01323c0c9a5cf07138228333e295daf08bb11",
+                "reference": "1cb01323c0c9a5cf07138228333e295daf08bb11",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.4",
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AllanTatter\\React\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Allan Tatter",
+                    "email": "allan.tatter@gmail.com"
+                }
+            ],
+            "description": "Render React.js components seemlessly on the server side within Laravel Blade views.",
+            "keywords": [
+                "blade",
+                "laravel",
+                "react",
+                "reactjs"
+            ],
+            "time": "2015-04-09 14:01:26"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "2.0.0",
@@ -1146,16 +1193,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0"
+                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dc5150cc608f2334c72c3b6a553ec9668a4156b0",
-                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c0c0b4bee3aabce7182876b0d912ef2595563db7",
+                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7",
                 "shasum": ""
             },
             "require": {
@@ -1192,7 +1239,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15.x-dev"
+                    "dev-master": "1.16.x-dev"
                 }
             },
             "autoload": {
@@ -1218,7 +1265,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-07-12 13:54:09"
+            "time": "2015-08-09 17:44:44"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -2946,16 +2993,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.2",
+            "version": "4.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "748c6963c0a8c983fa69ee8884c885d0e98209bf"
+                "reference": "fd3050e26e3105f416d74c4d33aea659b406c59d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/748c6963c0a8c983fa69ee8884c885d0e98209bf",
-                "reference": "748c6963c0a8c983fa69ee8884c885d0e98209bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fd3050e26e3105f416d74c4d33aea659b406c59d",
+                "reference": "fd3050e26e3105f416d74c4d33aea659b406c59d",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3061,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-07 12:56:50"
+            "time": "2015-08-10 09:16:56"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3495,7 +3542,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "allantatter/laravel-react": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

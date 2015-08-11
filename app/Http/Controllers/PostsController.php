@@ -24,14 +24,6 @@ class PostsController extends Controller
       $this->middleware('auth', ['except' => ['index', 'show']]); 
     }
 
-    public function getSlug(Post $post)
-    {  
-        foreach ($posts as $post) {
-            $post->slug = str_slug($post->title, "-");
-            $post->save();
-        }
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -41,10 +33,9 @@ class PostsController extends Controller
     {
         $limit = Input::get('limit') ?: 3;
         $posts = Post::latest('updated_at')->paginate($limit);
-//        dd(get_class_methods($posts));
-       return view('posts.index', compact('posts'));  
+        return view('posts.index', compact('posts'));  
     }
-
+   
      /**
      * Display a listing of the auth resource.
      *
@@ -80,17 +71,6 @@ class PostsController extends Controller
         $post->slug = str_slug($post->title, "-");
         $post->save();
         $post->tags()->attach($request->input('tag_list'));
-
-    //    $post = new Post($request->all());
-    //    $post->user_id = Auth::user()->id;
-    //    $post->save(compact('post')); 
-
-    //    $post = new Post($request->all());
-    //    Auth::user()->posts()->save($post);     
-
-    //    Post::create($request->all());
-    //    $post->user_id = Auth::user()->id; 
-
         flash()->overlay('Your post has been successfully created!', 'Good job');
         return redirect('posts/postsAuth'); 
     }

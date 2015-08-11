@@ -153,6 +153,7 @@ return [
 
         Laracasts\Flash\FlashServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        AllanTatter\React\ReactServiceProvider::class,
         
 
     ],
@@ -207,6 +208,7 @@ return [
         'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'React'     => AllanTatter\React\Facades\React::class,
 
     ],
 

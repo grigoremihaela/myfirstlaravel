@@ -12,7 +12,7 @@
             </h2>
         </div>
     </div>
-    <hr> 
+
     <div class="row">
         @foreach ($posts as $post)
             <div class="box">
@@ -26,6 +26,12 @@
                 <div class="col-lg-12">
                     <p>{!! $post->summary !!}</p> 
                 </div>
+<!-- .react -->
+                <div class="row">
+                    {!! React::component('HelloWorld', []) !!}  
+    <!--                 <div class="comments" id="{{ $post->id }}"></div>  -->
+                </div>
+<!-- .react -->
                 <div class="col-lg-12 ">
                     {!! link_to('/posts/' . $post->slug) !!} 
                     <hr>

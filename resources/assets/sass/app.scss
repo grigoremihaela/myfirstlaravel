@@ -1,2 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "variables";
+@import "bootstrap";
+
+@import "partials/auth";
+@import "partials/home";
+
+@import "pages/auth";
+@import "pages/home";

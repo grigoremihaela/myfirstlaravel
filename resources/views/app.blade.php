@@ -5,14 +5,17 @@
 
 <body>
     @include ('partials.nav')
-    @include('partials.header')
+    
     <div class="container">
+        @yield('login')
+        @yield('register')
         @include ('flash::message')
         @yield('github')
         @yield('content')
+        @yield('users')
+        @yield('faq')
+      
     </div>
-    @yield('users')
-    @yield('faq')
     @include('partials.footer')
     @include('partials.foot')
 </body>

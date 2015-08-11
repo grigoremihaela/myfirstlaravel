@@ -2,8 +2,11 @@
 
 @section('content')
 
-	<h2 class="section-title">Home Page</h2>
+	<h3 class="section-title" >Hello world!</h3>
 	<small class="section-subtitle">Voluptatem accusantum doloremque</small>
+<!-- .react -->
+	<div  id="counter"> </div>
+<!-- .react -->
 	<div class="row">
 		<div class="col-md-3 col-sm-6">
 			<div class="feature">

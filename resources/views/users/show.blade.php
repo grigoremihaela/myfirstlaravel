@@ -11,6 +11,7 @@
                         <div class="price">
                            <span class="num">{{ $user->name}}:
                                 @if(($user->image))
+                                    <div id="avatar" ></div>
                                     <img src="{{ $user->image }}" alt="" class="user-avatar" style="float:right; height:128px; width:128px" >
                                 @endif
                                 @if(($user->avatar))

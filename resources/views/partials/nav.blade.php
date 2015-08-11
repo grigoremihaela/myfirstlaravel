@@ -44,7 +44,7 @@
                 <li>{!! link_to('/auth/register', 'Register') !!}</li>
             @else
                 <li><a href="/users/{{ Auth::user()->id }}/edit" >Your profile</a></li>
-                <li><img class="img-responsive img-left" src="/img/english-flag.png" alt=""></li>
+                <li><img class="img-responsive img-left" src="{{ Auth::user()->image }}" style="height:38px; width:40px" alt=""></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>

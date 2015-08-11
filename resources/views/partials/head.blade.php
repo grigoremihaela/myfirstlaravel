@@ -9,6 +9,7 @@
     <link href="/css/app.css" rel="stylesheet">  
     -->
     {!! HTML::style('css/app.css') !!}
+    <link rel="stylesheet" href="css/base.css" />
     <!-- Fonts 
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     -->
